@@ -7,6 +7,11 @@ class Node:
         self.key = key
         self.data = data
 
+    def __hash__(self):
+        hash_code = 997021164
+        hash_code += hash_code * -1521134295 + hash(self.key)
+        return hash_code
+
 
 class PersonNode(Node):
     def __init__(self, name):
